@@ -11,14 +11,14 @@ if(sueldo < 100) {
 }else{
     console.log("ud es un papucho")
 }
-/* 
+
 let nombreIngresado = prompt("Ingresar Nombre");
 
 if ((nombreIngresado == "ANA") || (nombreIngresado == "ana")){
     alert("El usuario ingresado es Ana")
 }else{
     alert("El usuario ingresado no es Ana")
-} */
+} 
  
     let nombreIngresado = prompt("Ingrese su nombre")
 
