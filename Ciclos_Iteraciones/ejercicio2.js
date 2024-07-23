@@ -12,11 +12,11 @@ for (let number = 1; number <= 10; number++){
     console.log(number)
 }
 
-let entrada = prompt("Ingrese un dato");
+let entrada1 = prompt("Ingrese un dato");
 
-while(entrada != "ESC"){
-    alert("El usuario ingreso " + entrada);
-    entrada = prompt("Ingresar otro dato");
+while(entrada1 != "ESC"){
+    alert("El usuario ingreso " + entrada1);
+    entrada1 = prompt("Ingresar otro dato");
 }
 
 let numero = 0;
