@@ -18,6 +18,8 @@ function saludar () {
 }
 
 saludar()
+saludar()
+saludar()
 
 function solicitarNombre() {
     let nombreIngresado = "Claudio" //variable local

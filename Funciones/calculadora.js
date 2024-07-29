@@ -1,4 +1,4 @@
-function calculadora(num1, operacion, num2 ){
+function calculadora(num1, num2, operacion ){
     switch(operacion){
         case "+":
             return num1 + num2;
@@ -18,4 +18,4 @@ function calculadora(num1, operacion, num2 ){
     }
 }
 
-console.log(calculadora(10,"*", 5 ))
+console.log(calculadora(10, 5, "+" ))
