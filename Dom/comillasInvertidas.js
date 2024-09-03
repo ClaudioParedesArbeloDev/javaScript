@@ -1,4 +1,4 @@
-/* let producto = {id: 1, nombre: "Arroz", precio: 130}
+let producto = {id: 1, nombre: "Arroz", precio: 130}
 let concatenado = "ID: " + producto.id + " Producto: " + producto.nombre + " $" + producto.precio
 
 console.log(concatenado)
@@ -12,7 +12,7 @@ contenedor.innerHTML = `<h3> ID: ${producto.id}</h3>
                         <p> Producto: ${producto.nombre} </p>
                         <p> Precio: $${producto.precio}`
 
-document.body.appendChild(contenedor) */
+document.body.appendChild(contenedor)
 
 const productos = [
     {id: 1, nombre: "Arroz", precio: 125},

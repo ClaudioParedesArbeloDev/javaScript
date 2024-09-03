@@ -3,7 +3,6 @@ boton.addEventListener("click", respuestaClick)
 function respuestaClick(){
     alert("Apretaste el Boton")
     console.log("Respuesta al click")
-
 }
 
 let botonDos = document.getElementById("btnBotonDos")
