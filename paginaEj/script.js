@@ -12,17 +12,61 @@ let productos = [
    
 ]
 
+let btnComprar = document.getElementById("comprar")
+btnComprar.onclick = () => {
+    localStorage.clear()
+    carrito.innerHTML= ""
+}
+
+let contenedorProductos = document.getElementById("contenedorProductos")
+let carrito = document.getElementById("carrito")
+let arrayCarrito = []
+
+if(localStorage.getItem("carrito")) {
+    arrayCarrito = JSON.parse(localStorage.getItem("carrito"))
+}
+
+renderizarCarrito()
+renderizarProductos(productos)
+
+function renderizarProductos(arrayProductos) {
+    contenedorProductos.innerHTML = ''
+    for (const producto of arrayProductos) {
+        let tarjetaProducto = document.createElement("div")
+
+        if (producto.stock < 5){
+            tarjetaProducto.className = "productoSinStock"
+        }
+    }
+}
+
+
 for (const producto of productos) {
 let insertion = document.createElement("div")
 insertion.classList.add("entrada")
 insertion.innerHTML = `<img src=${producto.img}>
                         <h4>${producto.marca}</h4>
                         <p>${producto.descripcion}</p>
-                        <p>$${producto.precio}
-                        <button>Añadir a la cesta</button>`
+                        <p>$${producto.precio}</p>
+                        <button id="comprar">Comprar</button>`
+
 let mainElement = document.querySelector('main')
 mainElement.appendChild(insertion)
 }
 
 let search = document.getElementById("search")
 search.addEventListener("input", ()=>{console.log(search.value)})
+
+
+const guardarLocal = (clave, valor) => {localStorage.setItem(clave, valor)}
+
+for(const producto of productos) {
+    guardarLocal(producto.id , JSON.stringify(producto))
+}
+
+guardarLocal("listaProductos", JSON.stringify(productos))
+
+
+
+
+
