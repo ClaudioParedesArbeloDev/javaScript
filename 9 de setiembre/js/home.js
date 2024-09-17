@@ -76,12 +76,29 @@ function fnBtn (e) {
   console.log(e.target)
    let productoBuscado = productos.find(producto => producto.id == e.target.id)
    console.log(productoBuscado)
+      
    if(productoBuscado.stock == 0){
     alert("No hay stock de ese producto")
    }else{
-    arrayCarrito.push(productoBuscado)}
+    arrayCarrito.push({ 
+        id: productoBuscado.id, 
+        marca:productoBuscado.marca, 
+        descripcion:productoBuscado.descripcion,
+        precio: productoBuscado.precio,
+        unidades: 1,
+        subtotal: productoBuscado.precio,})
    console.log(arrayCarrito)
+  }
+
+  let nroProductos = document.getElementById("nroProducto")
+  nroProductos.innerHTML= `<p>${arrayCarrito.length}</p>`
+  
+  let carritoJson = JSON.stringify(arrayCarrito)
+  console.log(carritoJson)
+  localStorage.setItem("carrito", carritoJson)
+     
 }
+
 
 
 
