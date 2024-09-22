@@ -1,26 +1,50 @@
 let mainCarrito = document.getElementById("mainCarrito")
 
-mainCarrito.innerHTML= `<h2>Carro de compras</h2>`
-
 let arrayCarrito = JSON.parse(localStorage.getItem("carrito"))
 console.log(arrayCarrito)
 
 let carrito = ""
 
- renderizarCarrito(arrayCarrito)
+renderizarCarrito(arrayCarrito)
+
 
 function renderizarCarrito(array) {
-    carrito.innerHTML = ""
+    mainCarrito.innerHTML = '<h2>Lista de compras</h2>'
     for (const itemCarrito of array) {
-        carrito.innerHTML += `
-                <div class= "itemCarrito">
+        let productoXComprar = document.createElement("div")
+        productoXComprar.innerHTML = `
                     <h4>${itemCarrito.marca}</h4>
-                    <h4>${itemCarrito.descripcion}</h4>
-                    <h4>${itemCarrito.unidades}</h4>
-                    <h4>${itemCarrito.subtotal}</h4>
+                    <p>${itemCarrito.descripcion}</p>
+                    <p>${itemCarrito.unidades}</p>
+                    <h3>${itemCarrito.subtotal}</h3>
         `
+        mainCarrito.append(productoXComprar)
     }
-
-    mainCarrito.append(carrito)
     
-} 
+}
+
+let total = document.getElementById("total")
+
+rederizarTotal(arrayCarrito)
+
+function rederizarTotal(array) {
+        
+        let suma = 0
+        for (const productos of array) {
+             suma += productos.subtotal 
+        }
+        
+    total.innerHTML= `<p>Total</p> $${suma}`
+}
+
+
+function contrasenaValida (string){
+    if(string === "2Fj(jjbFsuj" || string === "eoZiugBf&g9"){
+        console.log(true)
+    }else(console.log(false))
+}
+
+console.log(contrasenaValida("2Fj(jjbFsuj")) // true
+console.log(contrasenaValida("eoZiugBf&g9")) // true
+console.log(contrasenaValida("hola")) // false
+console.log(contrasenaValida("")) // false

@@ -37,7 +37,43 @@ nav{
 }
 
 #mainCarrito{
+    padding: 50px 40px 40px 50px;
     h2{
         color: #efe9f4;
+        font-size: 3em;
+        margin-bottom: 50px;
+
+    }
+    div{
+        display: grid;
+        color: #efe9f4;
+        padding: 10px 10px 10px 10px;
+        width:80vw;
+        grid-template-columns: 250px 900px 50px 150px;
+        line-height: 40px;
+        border: 1px solid #16bac5;
+        
+        h4{
+            font-size: 1.2em;
+            padding-right: 10px;
+        }
+        p{
+            padding: 0 10px 0 10px;
+            font-size: 1.2em;
+        }
+        h3{
+           text-align: end;
+        }
+    }
+}
+
+#total{
+    color: #efe9f4;
+    font-size: 2em;
+    display: flex;
+    width: 80vw;
+    justify-content: end;
+    p{
+        padding-right: 20px;
     }
 }
